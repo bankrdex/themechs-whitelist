@@ -132,15 +132,16 @@
       <h2 class="section-title">Complete to Unlock</h2>
       <ul class="task-list" id="task-list">
         <li><a class="task-item" href="https://x.com/THEMECHS_" target="_blank" rel="noopener noreferrer" data-task="follow"><div class="task-check" id="check-follow">✓</div><div class="task-content"><div class="task-title">Follow @THEMECHS_</div><div class="task-desc">Follow the official account on X</div></div><div class="task-arrow">→</div></a></li>
+        <li><a class="task-item" href="https://x.com/THEMECHS_" target="_blank" rel="noopener noreferrer" data-task="notify"><div class="task-check" id="check-notify">✓</div><div class="task-content"><div class="task-title">Turn on Notifications</div><div class="task-desc">Tap the bell on the profile to open notifications</div></div><div class="task-arrow">→</div></a></li>
         <li><a class="task-item" href="https://x.com/THEMECHS_/status/2094290095499276332" target="_blank" rel="noopener noreferrer" data-task="like"><div class="task-check" id="check-like">✓</div><div class="task-content"><div class="task-title">Like the Latest Post</div><div class="task-desc">Like the pinned engagement post</div></div><div class="task-arrow">→</div></a></li>
         <li><a class="task-item" href="https://x.com/THEMECHS_/status/2094290095499276332" target="_blank" rel="noopener noreferrer" data-task="repost"><div class="task-check" id="check-repost">✓</div><div class="task-content"><div class="task-title">Repost the Post</div><div class="task-desc">Repost / RT the latest post</div></div><div class="task-arrow">→</div></a></li>
         <li><a class="task-item" href="https://x.com/THEMECHS_/status/2094290095499276332" target="_blank" rel="noopener noreferrer" data-task="tag"><div class="task-check" id="check-tag">✓</div><div class="task-content"><div class="task-title">Tag 3 Friends</div><div class="task-desc">Comment &amp; tag 3 friends on the post</div></div><div class="task-arrow">→</div></a></li>
       </ul>
-      <div class="progress-bar-wrap"><div class="progress-label"><span>Progress</span><span id="progress-text">0 / 4</span></div><div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div></div>
+      <div class="progress-bar-wrap"><div class="progress-label"><span>Progress</span><span id="progress-text">0 / 5</span></div><div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div></div>
     </section>
     <section class="card fade-in delay-3" id="form-card">
       <h2 class="section-title">Join Whitelist</h2>
-      <div class="unlock-hint" id="unlock-hint">Complete all 4 engagement tasks above to unlock the form</div>
+      <div class="unlock-hint" id="unlock-hint">Complete all 5 engagement tasks above to unlock the form</div>
       <form id="whitelist-form" class="form-locked">
         <div class="form-group"><label class="form-label" for="x-username">X Username</label><input class="form-input" type="text" id="x-username" name="x-username" placeholder="@yourusername" autocomplete="off" required /><p class="form-hint">Enter your X (Twitter) handle</p></div>
         <div class="form-group"><label class="form-label" for="wallet">Wallet Address</label><input class="form-input" type="text" id="wallet" name="wallet" placeholder="0x..." autocomplete="off" required /><p class="form-hint">EVM wallet address (manual entry — no connection required)</p></div>
@@ -158,7 +159,7 @@
   <script>
     (function () {
       const RECEIVE_EMAIL = 'web3.xyzy@gmail.com';
-      const tasks = ['follow', 'like', 'repost', 'tag'];
+      const tasks = ['follow', 'notify', 'like', 'repost', 'tag'];
       const completed = new Set();
       const STORAGE_KEY = 'themechs_wl_tasks';
       try { const saved = JSON.parse(sessionStorage.getItem(STORAGE_KEY) || '[]'); saved.forEach((t) => completed.add(t)); } catch (_) {}
@@ -170,12 +171,12 @@
           else { item.classList.remove('completed'); check.textContent = ''; }
         });
         const count = completed.size;
-        document.getElementById('progress-text').textContent = count + ' / 4';
-        document.getElementById('progress-fill').style.width = (count / 4) * 100 + '%';
+        document.getElementById('progress-text').textContent = count + ' / 5';
+        document.getElementById('progress-fill').style.width = (count / 5) * 100 + '%';
         const form = document.getElementById('whitelist-form');
         const hint = document.getElementById('unlock-hint');
         const btn = document.getElementById('submit-btn');
-        if (count === 4) { form.classList.remove('form-locked'); hint.style.display = 'none'; btn.disabled = false; }
+        if (count === 5) { form.classList.remove('form-locked'); hint.style.display = 'none'; btn.disabled = false; }
         else { form.classList.add('form-locked'); hint.style.display = 'block'; btn.disabled = true; }
         try { sessionStorage.setItem(STORAGE_KEY, JSON.stringify([...completed])); } catch (_) {}
       }
