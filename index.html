@@ -158,7 +158,8 @@
   <footer><p><a href="https://x.com/THEMECHS_" target="_blank" rel="noopener noreferrer">@THEMECHS_</a> &nbsp;·&nbsp; 1,777 Unique MECHS &nbsp;·&nbsp; Limited Forever</p></footer>
   <script>
     (function () {
-      const RECEIVE_EMAIL = 'web3.xyzy@gmail.com';
+      // Web3Forms access key — get free key at https://web3forms.com (enter web3.xyzy@gmail.com)
+      const WEB3FORMS_ACCESS_KEY = 'REPLACE_WITH_WEB3FORMS_KEY';
       const tasks = ['follow', 'notify', 'like', 'repost', 'tag'];
       const completed = new Set();
       const STORAGE_KEY = 'themechs_wl_tasks';
@@ -196,14 +197,28 @@
         if (!/^0x[a-fA-F0-9]{40}$/.test(wallet)) { walletInput.classList.add('error'); valid = false; }
         if (!valid) return;
         const cleanUser = username.startsWith('@') ? username : '@' + username;
+        if (!WEB3FORMS_ACCESS_KEY || WEB3FORMS_ACCESS_KEY === 'REPLACE_WITH_WEB3FORMS_KEY') {
+          alert('Form backend is being updated. Please try again in a few minutes.');
+          return;
+        }
         btn.disabled = true; btn.textContent = 'Submitting...';
         try {
-          const res = await fetch('https://formsubmit.co/ajax/' + RECEIVE_EMAIL, {
+          const res = await fetch('https://api.web3forms.com/submit', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-            body: JSON.stringify({ _subject: 'THE MECHS — New Whitelist Submission', 'X Username': cleanUser, 'Wallet Address': wallet, _template: 'table', _captcha: 'false' })
+            body: JSON.stringify({
+              access_key: WEB3FORMS_ACCESS_KEY,
+              subject: 'THE MECHS — New Whitelist Submission',
+              from_name: 'THE MECHS Whitelist',
+              'X Username': cleanUser,
+              'Wallet Address': wallet
+            })
           });
-          if (!res.ok) throw new Error('Submit failed');
+          const data = await res.json().catch(() => ({}));
+          if (!res.ok || data.success === false) {
+            const msg = (data && data.message) ? data.message : 'Submit failed';
+            throw new Error(msg);
+          }
           document.getElementById('form-card').style.display = 'none';
           document.getElementById('tasks-card').style.display = 'none';
           document.getElementById('success-username').textContent = cleanUser;
@@ -212,7 +227,12 @@
           try { sessionStorage.removeItem(STORAGE_KEY); } catch (_) {}
         } catch (err) {
           btn.disabled = false; btn.textContent = 'Join Whitelist';
-          alert('Submission failed. Please try again or contact the team.');
+          const msg = (err && err.message) ? err.message : 'Submission failed';
+          if (/rate limit|too many|429/i.test(msg)) {
+            alert('Server is busy after high traffic. Please try again in a few minutes.');
+          } else {
+            alert('Submission failed: ' + msg + '. Please try again.');
+          }
         }
       });
       updateUI();
