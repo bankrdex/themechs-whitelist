@@ -5,53 +5,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>THE MECHS — Whitelist</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23050508'/%3E%3Cpath d='M8 24V8h3.2l4.8 10.5L20.8 8H24v16h-2.8V13.2L16.8 24h-1.6L10.8 13.2V24H8z' fill='%2300e5ff'/%3E%3Ccircle cx='26' cy='6' r='2' fill='%23a855f7'/%3E%3C/svg%3E" />
-  <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23050508'/%3E%3Cpath d='M8 24V8h3.2l4.8 10.5L20.8 8H24v16h-2.8V13.2L16.8 24h-1.6L10.8 13.2V24H8z' fill='%2300e5ff'/%3E%3Ccircle cx='26' cy='6' r='2' fill='%23a855f7'/%3E%3C/svg%3E" />
   <meta name="theme-color" content="#050508" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://themechs-whitelist.vercel.app" />
   <meta property="og:title" content="THE MECHS — Whitelist" />
-  <meta property="og:description" content="Join the exclusive whitelist for THE MECHS — 1,777 unique MECHS. Limited forever. Complete X tasks and submit your wallet." />
+  <meta property="og:description" content="Join the exclusive whitelist for THE MECHS — 1,777 unique MECHS. Limited forever." />
   <meta property="og:image" content="https://pbs.twimg.com/profile_images/2094285777920532480/GsbmAnoz.jpg" />
-  <meta property="og:image:width" content="400" />
-  <meta property="og:image:height" content="400" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@THEMECHS_" />
   <meta name="twitter:title" content="THE MECHS — Whitelist" />
   <meta name="twitter:description" content="Join the exclusive whitelist for THE MECHS — 1,777 unique MECHS. Limited forever." />
   <meta name="twitter:image" content="https://pbs.twimg.com/profile_images/2094285777920532480/GsbmAnoz.jpg" />
   <meta name="description" content="Join the exclusive whitelist for THE MECHS — 1,777 unique MECHS. Limited forever." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
       --bg-deep: #050508; --bg-card: #0c0c12; --bg-elevated: #12121a;
       --border: rgba(255, 255, 255, 0.06); --border-hover: rgba(0, 229, 255, 0.25);
       --cyan: #00e5ff; --cyan-dim: rgba(0, 229, 255, 0.15);
-      --purple: #a855f7; --purple-dim: rgba(168, 85, 247, 0.15);
-      --text: #f0f0f5; --text-muted: #8a8a9a; --success: #22c55e;
+      --purple: #a855f7; --text: #f0f0f5; --text-muted: #8a8a9a; --success: #22c55e;
       --radius: 16px; --radius-sm: 10px;
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
     body { font-family: 'Inter', system-ui, sans-serif; background: var(--bg-deep); color: var(--text); min-height: 100vh; overflow-x: hidden; line-height: 1.5; }
     .bg-grid { position: fixed; inset: 0; background-image: linear-gradient(rgba(0, 229, 255, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 229, 255, 0.03) 1px, transparent 1px); background-size: 60px 60px; mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 20%, transparent 70%); pointer-events: none; z-index: 0; }
     .bg-glow { position: fixed; width: 600px; height: 600px; border-radius: 50%; filter: blur(120px); opacity: 0.25; pointer-events: none; z-index: 0; }
     .bg-glow-1 { top: -200px; left: 50%; transform: translateX(-50%); background: var(--cyan); }
     .bg-glow-2 { bottom: 10%; right: -150px; background: var(--purple); opacity: 0.15; }
-    .bg-glow-3 { bottom: 20%; left: -100px; background: var(--cyan); opacity: 0.1; }
     .container { position: relative; z-index: 1; max-width: 720px; margin: 0 auto; padding: 0 20px 80px; }
     header { text-align: center; padding: 48px 0 32px; }
     .logo-wrap { display: inline-flex; align-items: center; justify-content: center; margin-bottom: 28px; position: relative; }
     .logo-ring { position: absolute; width: 110px; height: 110px; border: 1px solid rgba(0, 229, 255, 0.2); border-radius: 50%; animation: pulse-ring 3s ease-in-out infinite; }
-    .logo-ring::before { content: ''; position: absolute; inset: 8px; border: 1px solid rgba(168, 85, 247, 0.25); border-radius: 50%; }
     .logo { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 2px solid rgba(0, 229, 255, 0.4); box-shadow: 0 0 30px rgba(0, 229, 255, 0.3); position: relative; z-index: 1; }
     h1 { font-family: 'Orbitron', sans-serif; font-weight: 800; font-size: clamp(2.2rem, 6vw, 3.4rem); letter-spacing: 0.08em; background: linear-gradient(135deg, #fff 0%, var(--cyan) 50%, var(--purple) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 12px; line-height: 1.15; }
-    .tagline { font-size: 1.05rem; color: var(--text-muted); font-weight: 400; max-width: 420px; margin: 0 auto 8px; }
-    .supply-badge { display: inline-flex; align-items: center; gap: 8px; margin-top: 16px; padding: 6px 14px; background: var(--cyan-dim); border: 1px solid rgba(0, 229, 255, 0.25); border-radius: 999px; font-size: 0.8rem; font-weight: 500; color: var(--cyan); letter-spacing: 0.04em; }
-    .supply-badge span { width: 6px; height: 6px; background: var(--cyan); border-radius: 50%; box-shadow: 0 0 8px var(--cyan); animation: blink 2s ease-in-out infinite; }
-    .card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px 24px; margin-bottom: 20px; transition: border-color 0.3s ease, box-shadow 0.3s ease; }
-    .card:hover { border-color: var(--border-hover); box-shadow: 0 0 40px rgba(0, 229, 255, 0.06); }
+    .tagline { font-size: 1.05rem; color: var(--text-muted); max-width: 420px; margin: 0 auto 8px; }
+    .supply-badge { display: inline-flex; align-items: center; gap: 8px; margin-top: 16px; padding: 6px 14px; background: var(--cyan-dim); border: 1px solid rgba(0, 229, 255, 0.25); border-radius: 999px; font-size: 0.8rem; font-weight: 500; color: var(--cyan); }
+    .supply-badge span { width: 6px; height: 6px; background: var(--cyan); border-radius: 50%; box-shadow: 0 0 8px var(--cyan); }
+    .card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px 24px; margin-bottom: 20px; }
     .section-title { font-family: 'Orbitron', sans-serif; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--cyan); margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
     .section-title::before { content: ''; width: 18px; height: 2px; background: linear-gradient(90deg, var(--cyan), transparent); }
     .mint-date { text-align: center; padding: 20px 24px; background: linear-gradient(135deg, var(--bg-elevated), var(--bg-card)); border: 1px solid rgba(168, 85, 247, 0.2); border-radius: var(--radius); margin-bottom: 20px; }
@@ -61,85 +51,70 @@
     .task-item { display: flex; align-items: center; gap: 14px; padding: 14px 16px; background: var(--bg-elevated); border: 1px solid var(--border); border-radius: var(--radius-sm); transition: all 0.25s ease; cursor: pointer; text-decoration: none; color: inherit; }
     .task-item:hover { border-color: rgba(0, 229, 255, 0.35); background: rgba(0, 229, 255, 0.04); transform: translateX(4px); }
     .task-item.completed { border-color: rgba(34, 197, 94, 0.35); background: rgba(34, 197, 94, 0.06); }
-    .task-check { width: 24px; height: 24px; border-radius: 6px; border: 2px solid rgba(255, 255, 255, 0.15); display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: all 0.25s ease; font-size: 14px; }
+    .task-check { width: 24px; height: 24px; border-radius: 6px; border: 2px solid rgba(255, 255, 255, 0.15); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 14px; }
     .task-item.completed .task-check { background: var(--success); border-color: var(--success); color: #fff; }
     .task-content { flex: 1; min-width: 0; }
     .task-title { font-weight: 600; font-size: 0.95rem; margin-bottom: 2px; }
     .task-desc { font-size: 0.8rem; color: var(--text-muted); }
-    .task-arrow { color: var(--text-muted); font-size: 1.1rem; opacity: 0.5; transition: opacity 0.2s; }
-    .task-item:hover .task-arrow { opacity: 1; color: var(--cyan); }
+    .task-arrow { color: var(--text-muted); font-size: 1.1rem; opacity: 0.5; }
     .progress-bar-wrap { margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--border); }
     .progress-label { display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--text-muted); margin-bottom: 8px; }
     .progress-bar { height: 6px; background: rgba(255, 255, 255, 0.06); border-radius: 999px; overflow: hidden; }
-    .progress-fill { height: 100%; background: linear-gradient(90deg, var(--cyan), var(--purple)); border-radius: 999px; width: 0%; transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 0 12px rgba(0, 229, 255, 0.5); }
+    .progress-fill { height: 100%; background: linear-gradient(90deg, var(--cyan), var(--purple)); border-radius: 999px; width: 0%; transition: width 0.5s; box-shadow: 0 0 12px rgba(0, 229, 255, 0.5); }
     .form-group { margin-bottom: 18px; }
-    .form-label { display: block; font-size: 0.8rem; font-weight: 500; color: var(--text-muted); margin-bottom: 8px; letter-spacing: 0.03em; }
-    .form-input { width: 100%; padding: 14px 16px; background: var(--bg-elevated); border: 1px solid var(--border); border-radius: var(--radius-sm); color: var(--text); font-size: 0.95rem; font-family: inherit; transition: border-color 0.25s, box-shadow 0.25s; outline: none; }
-    .form-input::placeholder { color: rgba(138, 138, 154, 0.6); }
+    .form-label { display: block; font-size: 0.8rem; font-weight: 500; color: var(--text-muted); margin-bottom: 8px; }
+    .form-input { width: 100%; padding: 14px 16px; background: var(--bg-elevated); border: 1px solid var(--border); border-radius: var(--radius-sm); color: var(--text); font-size: 0.95rem; font-family: inherit; outline: none; }
     .form-input:focus { border-color: rgba(0, 229, 255, 0.5); box-shadow: 0 0 0 3px rgba(0, 229, 255, 0.1); }
     .form-input.error { border-color: rgba(239, 68, 68, 0.5); }
     .form-hint { font-size: 0.75rem; color: var(--text-muted); margin-top: 6px; }
-    .btn { width: 100%; padding: 16px 24px; border: none; border-radius: var(--radius-sm); font-family: 'Orbitron', sans-serif; font-size: 0.9rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; transition: all 0.3s ease; position: relative; overflow: hidden; }
+    .btn { width: 100%; padding: 16px 24px; border: none; border-radius: var(--radius-sm); font-family: 'Orbitron', sans-serif; font-size: 0.9rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; }
     .btn-primary { background: linear-gradient(135deg, var(--cyan), #0099cc); color: #050508; box-shadow: 0 4px 24px rgba(0, 229, 255, 0.35); }
-    .btn-primary:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(0, 229, 255, 0.45); }
-    .btn-primary:active:not(:disabled) { transform: translateY(0); }
     .btn-primary:disabled { opacity: 0.4; cursor: not-allowed; box-shadow: none; }
-    .btn-primary::after { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, transparent, rgba(255, 255, 255, 0.2), transparent); transform: translateX(-100%); transition: transform 0.5s; }
-    .btn-primary:hover:not(:disabled)::after { transform: translateX(100%); }
     .form-locked { opacity: 0.5; pointer-events: none; filter: grayscale(0.3); }
     .unlock-hint { text-align: center; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 16px; padding: 12px; background: rgba(168, 85, 247, 0.08); border-radius: var(--radius-sm); border: 1px dashed rgba(168, 85, 247, 0.25); }
-    .success-card { text-align: center; padding: 48px 28px; display: none; animation: fadeUp 0.6s ease; }
+    .success-card { text-align: center; padding: 48px 28px; display: none; }
     .success-card.visible { display: block; }
-    .success-icon { width: 72px; height: 72px; margin: 0 auto 24px; background: rgba(34, 197, 94, 0.12); border: 2px solid var(--success); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; color: var(--success); box-shadow: 0 0 30px rgba(34, 197, 94, 0.25); animation: scaleIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1); }
-    .success-title { font-family: 'Orbitron', sans-serif; font-size: 1.4rem; font-weight: 700; margin-bottom: 12px; color: var(--success); letter-spacing: 0.05em; }
-    .success-msg { color: var(--text-muted); font-size: 0.95rem; max-width: 360px; margin: 0 auto 24px; line-height: 1.6; }
+    .success-icon { width: 72px; height: 72px; margin: 0 auto 24px; background: rgba(34, 197, 94, 0.12); border: 2px solid var(--success); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; color: var(--success); }
+    .success-title { font-family: 'Orbitron', sans-serif; font-size: 1.4rem; font-weight: 700; margin-bottom: 12px; color: var(--success); }
+    .success-msg { color: var(--text-muted); font-size: 0.95rem; max-width: 360px; margin: 0 auto 24px; }
     .success-details { background: var(--bg-elevated); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 16px; text-align: left; font-size: 0.85rem; }
     .success-details dt { color: var(--text-muted); font-size: 0.75rem; margin-bottom: 2px; }
     .success-details dd { font-family: 'Orbitron', monospace; font-size: 0.9rem; margin-bottom: 12px; word-break: break-all; color: var(--cyan); }
-    .success-details dd:last-child { margin-bottom: 0; }
     footer { text-align: center; padding: 32px 20px; color: var(--text-muted); font-size: 0.8rem; }
-    footer a { color: var(--cyan); text-decoration: none; transition: opacity 0.2s; }
-    footer a:hover { opacity: 0.8; }
+    footer a { color: var(--cyan); text-decoration: none; }
     @keyframes pulse-ring { 0%, 100% { transform: scale(1); opacity: 0.6; } 50% { transform: scale(1.08); opacity: 1; } }
-    @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
-    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-    @keyframes scaleIn { from { transform: scale(0); opacity: 0; } to { transform: scale(1); opacity: 1; } }
-    .fade-in { animation: fadeUp 0.6s ease both; }
-    .delay-1 { animation-delay: 0.1s; } .delay-2 { animation-delay: 0.2s; } .delay-3 { animation-delay: 0.3s; }
-    @media (max-width: 480px) { header { padding: 36px 0 24px; } .card { padding: 22px 18px; } .task-item { padding: 12px 14px; } .mint-date-value { font-size: 1.25rem; } }
   </style>
 </head>
 <body>
   <div class="bg-grid"></div>
   <div class="bg-glow bg-glow-1"></div>
   <div class="bg-glow bg-glow-2"></div>
-  <div class="bg-glow bg-glow-3"></div>
   <div class="container">
-    <header class="fade-in">
+    <header>
       <div class="logo-wrap">
         <div class="logo-ring"></div>
-        <img class="logo" src="https://pbs.twimg.com/profile_images/2094285777920532480/GsbmAnoz.jpg" alt="THE MECHS" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 80 80%22%3E%3Crect fill=%22%230c0c12%22 width=%2280%22 height=%2280%22/%3E%3Ctext x=%2240%22 y=%2248%22 text-anchor=%22middle%22 fill=%22%2300e5ff%22 font-family=%22sans-serif%22 font-size=%2220%22 font-weight=%22bold%22%3EM%3C/text%3E%3C/svg%3E'" />
+        <img class="logo" src="https://pbs.twimg.com/profile_images/2094285777920532480/GsbmAnoz.jpg" alt="THE MECHS" />
       </div>
       <h1>THE MECHS</h1>
       <p class="tagline">A collection of 1,777 unique MECHS.<br />Limited forever.</p>
       <div class="supply-badge"><span></span> 1,777 SUPPLY · LIMITED</div>
     </header>
-    <div class="mint-date fade-in delay-1">
+    <div class="mint-date">
       <div class="mint-date-label">Mint Date</div>
       <div class="mint-date-value">TBA</div>
     </div>
-    <section class="card fade-in delay-2" id="tasks-card">
+    <section class="card" id="tasks-card">
       <h2 class="section-title">Complete to Unlock</h2>
       <ul class="task-list" id="task-list">
-        <li><a class="task-item" href="https://x.com/THEMECHS_" target="_blank" rel="noopener noreferrer" data-task="follow"><div class="task-check" id="check-follow">✓</div><div class="task-content"><div class="task-title">Follow @THEMECHS_</div><div class="task-desc">Follow the official account on X</div></div><div class="task-arrow">→</div></a></li>
-        <li><a class="task-item" href="https://x.com/THEMECHS_" target="_blank" rel="noopener noreferrer" data-task="notify"><div class="task-check" id="check-notify">✓</div><div class="task-content"><div class="task-title">Turn on Notifications</div><div class="task-desc">Tap the bell on the profile to open notifications</div></div><div class="task-arrow">→</div></a></li>
-        <li><a class="task-item" href="https://x.com/THEMECHS_/status/2094290095499276332" target="_blank" rel="noopener noreferrer" data-task="like"><div class="task-check" id="check-like">✓</div><div class="task-content"><div class="task-title">Like the Latest Post</div><div class="task-desc">Like the pinned engagement post</div></div><div class="task-arrow">→</div></a></li>
-        <li><a class="task-item" href="https://x.com/THEMECHS_/status/2094290095499276332" target="_blank" rel="noopener noreferrer" data-task="repost"><div class="task-check" id="check-repost">✓</div><div class="task-content"><div class="task-title">Repost the Post</div><div class="task-desc">Repost / RT the latest post</div></div><div class="task-arrow">→</div></a></li>
-        <li><a class="task-item" href="https://x.com/THEMECHS_/status/2094290095499276332" target="_blank" rel="noopener noreferrer" data-task="tag"><div class="task-check" id="check-tag">✓</div><div class="task-content"><div class="task-title">Tag 3 Friends</div><div class="task-desc">Comment &amp; tag 3 friends on the post</div></div><div class="task-arrow">→</div></a></li>
+        <li><a class="task-item" href="https://x.com/THEMECHS_" target="_blank" rel="noopener" data-task="follow"><div class="task-check" id="check-follow">✓</div><div class="task-content"><div class="task-title">Follow @THEMECHS_</div><div class="task-desc">Follow the official account on X</div></div><div class="task-arrow">→</div></a></li>
+        <li><a class="task-item" href="https://x.com/THEMECHS_" target="_blank" rel="noopener" data-task="notify"><div class="task-check" id="check-notify">✓</div><div class="task-content"><div class="task-title">Turn on Notifications</div><div class="task-desc">Tap the bell on the profile to open notifications</div></div><div class="task-arrow">→</div></a></li>
+        <li><a class="task-item" href="https://x.com/THEMECHS_/status/2094290095499276332" target="_blank" rel="noopener" data-task="like"><div class="task-check" id="check-like">✓</div><div class="task-content"><div class="task-title">Like the Latest Post</div><div class="task-desc">Like the pinned engagement post</div></div><div class="task-arrow">→</div></a></li>
+        <li><a class="task-item" href="https://x.com/THEMECHS_/status/2094290095499276332" target="_blank" rel="noopener" data-task="repost"><div class="task-check" id="check-repost">✓</div><div class="task-content"><div class="task-title">Repost the Post</div><div class="task-desc">Repost / RT the latest post</div></div><div class="task-arrow">→</div></a></li>
+        <li><a class="task-item" href="https://x.com/THEMECHS_/status/2094290095499276332" target="_blank" rel="noopener" data-task="tag"><div class="task-check" id="check-tag">✓</div><div class="task-content"><div class="task-title">Tag 3 Friends</div><div class="task-desc">Comment &amp; tag 3 friends on the post</div></div><div class="task-arrow">→</div></a></li>
       </ul>
       <div class="progress-bar-wrap"><div class="progress-label"><span>Progress</span><span id="progress-text">0 / 5</span></div><div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div></div>
     </section>
-    <section class="card fade-in delay-3" id="form-card">
+    <section class="card" id="form-card">
       <h2 class="section-title">Join Whitelist</h2>
       <div class="unlock-hint" id="unlock-hint">Complete all 5 engagement tasks above to unlock the form</div>
       <form id="whitelist-form" class="form-locked">
@@ -155,83 +130,72 @@
       <dl class="success-details"><dt>X Username</dt><dd id="success-username">—</dd><dt>Wallet Address</dt><dd id="success-wallet">—</dd></dl>
     </section>
   </div>
-  <footer><p><a href="https://x.com/THEMECHS_" target="_blank" rel="noopener noreferrer">@THEMECHS_</a> &nbsp;·&nbsp; 1,777 Unique MECHS &nbsp;·&nbsp; Limited Forever</p></footer>
+  <footer><p><a href="https://x.com/THEMECHS_" target="_blank" rel="noopener">@THEMECHS_</a> · 1,777 Unique MECHS · Limited Forever</p></footer>
   <script>
     (function () {
-      const WEB3FORMS_ACCESS_KEY = 'bceef9e2-797e-4cc6-b2fb-fc80e9e16029';
+      const GOOGLE_FORM_ACTION = 'https://docs.google.com/forms/d/e/1FAIpQLScF5zZ72OEFcLokxrp7VVv-LJbp6y6uUif2Sjt_utvEh_4zHg/formResponse';
+      const GOOGLE_ENTRY_WALLET = 'entry.506336355';
+      const GOOGLE_ENTRY_TWITTER = 'entry.1937566451';
       const tasks = ['follow', 'notify', 'like', 'repost', 'tag'];
       const completed = new Set();
       const STORAGE_KEY = 'themechs_wl_tasks';
-      try { const saved = JSON.parse(sessionStorage.getItem(STORAGE_KEY) || '[]'); saved.forEach((t) => completed.add(t)); } catch (_) {}
+      try { JSON.parse(sessionStorage.getItem(STORAGE_KEY) || '[]').forEach(function(t){ completed.add(t); }); } catch(e) {}
       function updateUI() {
-        tasks.forEach((task) => {
-          const item = document.querySelector('[data-task="' + task + '"]');
-          const check = document.getElementById('check-' + task);
-          if (completed.has(task)) { item.classList.add('completed'); check.textContent = '✓'; }
+        tasks.forEach(function(task) {
+          var item = document.querySelector('[data-task="' + task + '"]');
+          var check = document.getElementById('check-' + task);
+          if (completed.has(task)) { item.classList.add('completed'); check.textContent = '\u2713'; }
           else { item.classList.remove('completed'); check.textContent = ''; }
         });
-        const count = completed.size;
+        var count = completed.size;
         document.getElementById('progress-text').textContent = count + ' / 5';
         document.getElementById('progress-fill').style.width = (count / 5) * 100 + '%';
-        const form = document.getElementById('whitelist-form');
-        const hint = document.getElementById('unlock-hint');
-        const btn = document.getElementById('submit-btn');
+        var form = document.getElementById('whitelist-form');
+        var hint = document.getElementById('unlock-hint');
+        var btn = document.getElementById('submit-btn');
         if (count === 5) { form.classList.remove('form-locked'); hint.style.display = 'none'; btn.disabled = false; }
         else { form.classList.add('form-locked'); hint.style.display = 'block'; btn.disabled = true; }
-        try { sessionStorage.setItem(STORAGE_KEY, JSON.stringify([...completed])); } catch (_) {}
+        try { sessionStorage.setItem(STORAGE_KEY, JSON.stringify(Array.from(completed))); } catch(e) {}
       }
-      document.querySelectorAll('[data-task]').forEach((el) => {
-        el.addEventListener('click', function () { const task = this.dataset.task; setTimeout(() => { completed.add(task); updateUI(); }, 400); });
+      document.querySelectorAll('[data-task]').forEach(function(el) {
+        el.addEventListener('click', function() {
+          var task = this.dataset.task;
+          setTimeout(function(){ completed.add(task); updateUI(); }, 400);
+        });
       });
-      document.getElementById('whitelist-form').addEventListener('submit', async function (e) {
+      document.getElementById('whitelist-form').addEventListener('submit', async function(e) {
         e.preventDefault();
-        const username = document.getElementById('x-username').value.trim();
-        const wallet = document.getElementById('wallet').value.trim();
-        const userInput = document.getElementById('x-username');
-        const walletInput = document.getElementById('wallet');
-        const btn = document.getElementById('submit-btn');
+        var username = document.getElementById('x-username').value.trim();
+        var wallet = document.getElementById('wallet').value.trim();
+        var userInput = document.getElementById('x-username');
+        var walletInput = document.getElementById('wallet');
+        var btn = document.getElementById('submit-btn');
         userInput.classList.remove('error'); walletInput.classList.remove('error');
-        let valid = true;
+        var valid = true;
         if (!username || username.length < 2) { userInput.classList.add('error'); valid = false; }
         if (!/^0x[a-fA-F0-9]{40}$/.test(wallet)) { walletInput.classList.add('error'); valid = false; }
         if (!valid) return;
-        const cleanUser = username.startsWith('@') ? username : '@' + username;
-        if (!WEB3FORMS_ACCESS_KEY || WEB3FORMS_ACCESS_KEY === 'REPLACE_WITH_WEB3FORMS_KEY') {
-          alert('Form backend is being updated. Please try again in a few minutes.');
-          return;
-        }
+        var cleanUser = username.charAt(0) === '@' ? username : '@' + username;
         btn.disabled = true; btn.textContent = 'Submitting...';
         try {
-          const res = await fetch('https://api.web3forms.com/submit', {
+          var body = new URLSearchParams();
+          body.append(GOOGLE_ENTRY_WALLET, wallet);
+          body.append(GOOGLE_ENTRY_TWITTER, cleanUser);
+          await fetch(GOOGLE_FORM_ACTION, {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-            body: JSON.stringify({
-              access_key: WEB3FORMS_ACCESS_KEY,
-              subject: 'THE MECHS — New Whitelist Submission',
-              from_name: 'THE MECHS Whitelist',
-              'X Username': cleanUser,
-              'Wallet Address': wallet
-            })
+            mode: 'no-cors',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: body.toString()
           });
-          const data = await res.json().catch(() => ({}));
-          if (!res.ok || data.success === false) {
-            const msg = (data && data.message) ? data.message : 'Submit failed';
-            throw new Error(msg);
-          }
           document.getElementById('form-card').style.display = 'none';
           document.getElementById('tasks-card').style.display = 'none';
           document.getElementById('success-username').textContent = cleanUser;
           document.getElementById('success-wallet').textContent = wallet;
           document.getElementById('success-card').classList.add('visible');
-          try { sessionStorage.removeItem(STORAGE_KEY); } catch (_) {}
+          try { sessionStorage.removeItem(STORAGE_KEY); } catch(e) {}
         } catch (err) {
           btn.disabled = false; btn.textContent = 'Join Whitelist';
-          const msg = (err && err.message) ? err.message : 'Submission failed';
-          if (/rate limit|too many|429/i.test(msg)) {
-            alert('Server is busy after high traffic. Please try again in a few minutes.');
-          } else {
-            alert('Submission failed: ' + msg + '. Please try again.');
-          }
+          alert('Submission failed. Please try again.');
         }
       });
       updateUI();
