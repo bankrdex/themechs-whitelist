@@ -1,1 +1,177 @@
-see-file
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>THE MECHS — Eligibility Checker</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23050508'/%3E%3Cpath d='M8 24V8h3.2l4.8 10.5L20.8 8H24v16h-2.8V13.2L16.8 24h-1.6L10.8 13.2V24H8z' fill='%2300e5ff'/%3E%3C/svg%3E" />
+  <meta name="theme-color" content="#050508" />
+  <meta name="description" content="Check if your wallet is eligible for THE MECHS token airdrop." />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #050508; --card: #0c0c12; --elevated: #12121a;
+      --border: rgba(255,255,255,0.06); --cyan: #00e5ff; --purple: #a855f7;
+      --text: #f0f0f5; --muted: #8a8a9a; --ok: #22c55e; --bad: #ef4444;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: Inter, system-ui, sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; line-height: 1.5; }
+    .grid { position: fixed; inset: 0; pointer-events: none; z-index: 0;
+      background-image: linear-gradient(rgba(0,229,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,229,255,0.03) 1px, transparent 1px);
+      background-size: 60px 60px; mask-image: radial-gradient(ellipse 80% 50% at 50% 0%, #000 20%, transparent 70%); }
+    .glow { position: fixed; width: 500px; height: 500px; border-radius: 50%; filter: blur(120px); opacity: 0.2; pointer-events: none; z-index: 0;
+      top: -150px; left: 50%; transform: translateX(-50%); background: var(--cyan); }
+    .wrap { position: relative; z-index: 1; max-width: 640px; margin: 0 auto; padding: 40px 20px 80px; }
+    header { text-align: center; margin-bottom: 28px; }
+    .badge { display: inline-block; font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--cyan); border: 1px solid rgba(0,229,255,0.3); background: rgba(0,229,255,0.08);
+      padding: 6px 12px; border-radius: 999px; margin-bottom: 16px; }
+    h1 { font-family: Orbitron, sans-serif; font-weight: 800; font-size: clamp(1.6rem, 5vw, 2.2rem); letter-spacing: 0.06em;
+      background: linear-gradient(135deg, #fff, var(--cyan), var(--purple));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 10px; }
+    .sub { color: var(--muted); font-size: 0.95rem; max-width: 420px; margin: 0 auto; }
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 24px; margin-bottom: 16px; }
+    .card h2 { font-family: Orbitron, sans-serif; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--cyan); margin-bottom: 14px; }
+    label { display: block; font-size: 0.8rem; color: var(--muted); margin-bottom: 8px; }
+    input { width: 100%; padding: 14px 16px; border-radius: 10px; border: 1px solid var(--border);
+      background: var(--elevated); color: var(--text); font-size: 0.95rem; font-family: inherit; outline: none; }
+    input:focus { border-color: rgba(0,229,255,0.45); box-shadow: 0 0 0 3px rgba(0,229,255,0.1); }
+    input.error { border-color: rgba(239,68,68,0.5); }
+    .btn { width: 100%; margin-top: 14px; padding: 14px; border: none; border-radius: 10px;
+      font-family: Orbitron, sans-serif; font-weight: 700; font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer;
+      background: linear-gradient(135deg, var(--cyan), #0099cc); color: #050508; box-shadow: 0 4px 20px rgba(0,229,255,0.3); }
+    .btn:disabled { opacity: 0.5; cursor: wait; }
+    .hint { font-size: 0.75rem; color: var(--muted); margin-top: 8px; }
+    .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 16px; }
+    .stat { background: var(--elevated); border: 1px solid var(--border); border-radius: 12px; padding: 14px; text-align: center; }
+    .stat .v { font-family: Orbitron, sans-serif; font-size: 1.05rem; color: var(--cyan); margin-bottom: 4px; }
+    .stat .l { font-size: 0.72rem; color: var(--muted); letter-spacing: 0.04em; text-transform: uppercase; }
+    ul.rules { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    ul.rules li { display: flex; gap: 10px; align-items: flex-start; font-size: 0.9rem; color: var(--muted);
+      padding: 10px 12px; background: var(--elevated); border-radius: 10px; border: 1px solid var(--border); }
+    ul.rules li strong { color: var(--text); }
+    .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--cyan); margin-top: 6px; flex-shrink: 0; box-shadow: 0 0 8px var(--cyan); }
+    #result { display: none; } #result.show { display: block; }
+    .status { text-align: center; padding: 20px; border-radius: 12px; margin-bottom: 14px; border: 1px solid var(--border); }
+    .status.ok { background: rgba(34,197,94,0.08); border-color: rgba(34,197,94,0.35); }
+    .status.no { background: rgba(239,68,68,0.08); border-color: rgba(239,68,68,0.35); }
+    .status .title { font-family: Orbitron, sans-serif; font-size: 1.15rem; margin-bottom: 6px; }
+    .status.ok .title { color: var(--ok); } .status.no .title { color: var(--bad); }
+    .alloc { text-align: center; padding: 18px; background: var(--elevated); border-radius: 12px; border: 1px solid rgba(0,229,255,0.2); margin-bottom: 12px; }
+    .alloc .amt { font-family: Orbitron, sans-serif; font-size: 1.5rem; color: var(--cyan); letter-spacing: 0.04em; }
+    .alloc .lbl { font-size: 0.8rem; color: var(--muted); margin-top: 4px; }
+    .note { font-size: 0.85rem; color: var(--muted); text-align: center; line-height: 1.6; }
+    footer { text-align: center; margin-top: 28px; font-size: 0.8rem; color: var(--muted); }
+    footer a { color: var(--cyan); text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="grid"></div><div class="glow"></div>
+  <div class="wrap">
+    <header>
+      <div class="badge">Token Airdrop</div>
+      <h1>ELIGIBILITY CHECKER</h1>
+      <p class="sub">Whitelist wallets only. No wallet connection — paste your address to check.</p>
+    </header>
+    <div class="stats">
+      <div class="stat"><div class="v">100B</div><div class="l">Total Supply</div></div>
+      <div class="stat"><div class="v">20B</div><div class="l">Airdrop Pool</div></div>
+      <div class="stat"><div class="v" id="wlCount">—</div><div class="l">Eligible Wallets</div></div>
+      <div class="stat"><div class="v">3 Days</div><div class="l">Distribution</div></div>
+    </div>
+    <div class="card">
+      <h2>Check Wallet</h2>
+      <label for="wallet">Wallet Address</label>
+      <input id="wallet" type="text" placeholder="0x..." autocomplete="off" spellcheck="false" />
+      <p class="hint">Manual entry only. We never ask you to connect a wallet.</p>
+      <button class="btn" id="checkBtn" type="button">Check Eligibility</button>
+    </div>
+    <div class="card" id="result">
+      <div class="status" id="statusBox">
+        <div class="title" id="statusTitle">—</div>
+        <div id="statusMsg" style="color:var(--muted);font-size:0.9rem;"></div>
+      </div>
+      <div class="alloc" id="allocBox" style="display:none;">
+        <div class="amt" id="allocAmt">—</div>
+        <div class="lbl">Your estimated allocation</div>
+      </div>
+      <p class="note" id="resultNote"></p>
+    </div>
+    <div class="card">
+      <h2>Requirements</h2>
+      <ul class="rules">
+        <li><span class="dot"></span><div><strong>Whitelist only.</strong> Wallet must be on the official WL list.</div></li>
+        <li><span class="dot"></span><div><strong>Anti-bot.</strong> Hold at least <strong>$1 worth of the token for 3 days</strong> after distribution starts.</div></li>
+        <li><span class="dot"></span><div><strong>No wallet connect.</strong> Paste address only. Tokens are sent to you.</div></li>
+        <li><span class="dot"></span><div><strong>Random amounts.</strong> Each eligible wallet gets a different share of the 20B airdrop.</div></li>
+        <li><span class="dot"></span><div><strong>3-day window.</strong> All eligible users receive rewards over three days.</div></li>
+      </ul>
+    </div>
+    <footer><a href="https://x.com/THEMECHS_" target="_blank" rel="noopener">@THEMECHS_</a> · WL airdrop</footer>
+  </div>
+  <script>
+    var WL = null;
+    var AIRDROP = 20000000000;
+    var btn = document.getElementById('checkBtn');
+    btn.disabled = true; btn.textContent = 'Loading list...';
+
+    fetch('wallets.json').then(function(r){ return r.json(); }).then(function(list){
+      WL = new Set(list.map(function(w){ return String(w).toLowerCase(); }));
+      document.getElementById('wlCount').textContent = WL.size.toLocaleString();
+      btn.disabled = false; btn.textContent = 'Check Eligibility';
+    }).catch(function(){
+      btn.textContent = 'Failed to load list';
+    });
+
+    function isAddress(a) { return /^0x[a-fA-F0-9]{40}$/.test(a); }
+    function hashWallet(w) {
+      var s = w.toLowerCase(), h = 2166136261;
+      for (var i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 16777619); }
+      return h >>> 0;
+    }
+    function allocation(wallet) {
+      var avg = AIRDROP / WL.size;
+      var r = (hashWallet(wallet) % 10000) / 10000;
+      return Math.floor(avg * (0.2 + r * 2.8));
+    }
+    function formatAmt(n) { return n.toLocaleString('en-US'); }
+
+    function runCheck() {
+      if (!WL) return;
+      var w = document.getElementById('wallet').value.trim();
+      var input = document.getElementById('wallet');
+      input.classList.remove('error');
+      var result = document.getElementById('result');
+      var statusBox = document.getElementById('statusBox');
+      var allocBox = document.getElementById('allocBox');
+      result.classList.add('show');
+      if (!isAddress(w)) {
+        input.classList.add('error');
+        statusBox.className = 'status no';
+        document.getElementById('statusTitle').textContent = 'Invalid address';
+        document.getElementById('statusMsg').textContent = 'Enter a valid EVM address (0x + 40 hex).';
+        allocBox.style.display = 'none';
+        document.getElementById('resultNote').textContent = '';
+        return;
+      }
+      var key = w.toLowerCase();
+      if (WL.has(key)) {
+        statusBox.className = 'status ok';
+        document.getElementById('statusTitle').textContent = 'Eligible';
+        document.getElementById('statusMsg').textContent = 'This wallet is on the whitelist.';
+        allocBox.style.display = 'block';
+        document.getElementById('allocAmt').textContent = formatAmt(allocation(key)) + ' tokens';
+        document.getElementById('resultNote').textContent = 'Hold at least $1 of the token for 3 days to pass the anti-bot check. Distribution runs over 3 days — you will receive your tokens soon. No wallet connection required.';
+      } else {
+        statusBox.className = 'status no';
+        document.getElementById('statusTitle').textContent = 'Not eligible';
+        document.getElementById('statusMsg').textContent = 'This wallet was not found on the whitelist.';
+        allocBox.style.display = 'none';
+        document.getElementById('resultNote').textContent = 'Only wallets from the official whitelist form are eligible.';
+      }
+    }
+    btn.addEventListener('click', runCheck);
+    document.getElementById('wallet').addEventListener('keydown', function(e){ if (e.key === 'Enter') runCheck(); });
+  </script>
+</body>
+</html>
