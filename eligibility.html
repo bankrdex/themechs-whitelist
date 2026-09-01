@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>THE MECHS — Eligibility Checker</title>
+  <title>THE MECHS ($MECHS) — Eligibility Checker</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23050508'/%3E%3Cpath d='M8 24V8h3.2l4.8 10.5L20.8 8H24v16h-2.8V13.2L16.8 24h-1.6L10.8 13.2V24H8z' fill='%2300e5ff'/%3E%3C/svg%3E" />
   <meta name="theme-color" content="#050508" />
-  <meta name="description" content="Check if your wallet is eligible for THE MECHS token airdrop." />
+  <meta name="description" content="Check if your wallet is eligible for THE MECHS ($MECHS) token airdrop." />
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <style>
     :root {
@@ -69,9 +69,9 @@
   <div class="grid"></div><div class="glow"></div>
   <div class="wrap">
     <header>
-      <div class="badge">Token Airdrop</div>
-      <h1>ELIGIBILITY CHECKER</h1>
-      <p class="sub">Whitelist wallets only. No wallet connection — paste your address to check.</p>
+      <div class="badge">$MECHS Airdrop</div>
+      <h1>THE MECHS</h1>
+      <p class="sub">Check $MECHS airdrop eligibility. Whitelist only · no wallet connection.</p>
     </header>
     <div class="stats">
       <div class="stat"><div class="v">100B</div><div class="l">Total Supply</div></div>
@@ -93,7 +93,7 @@
       </div>
       <div class="alloc" id="allocBox" style="display:none;">
         <div class="amt" id="allocAmt">—</div>
-        <div class="lbl">Your estimated allocation</div>
+        <div class="lbl">Your estimated $MECHS allocation</div>
       </div>
       <p class="note" id="resultNote"></p>
     </div>
@@ -101,13 +101,13 @@
       <h2>Requirements</h2>
       <ul class="rules">
         <li><span class="dot"></span><div><strong>Whitelist only.</strong> Wallet must be on the official WL list.</div></li>
-        <li><span class="dot"></span><div><strong>Anti-bot.</strong> Hold at least <strong>$1 worth of the token for 3 days</strong> after distribution starts.</div></li>
+        <li><span class="dot"></span><div><strong>Anti-bot.</strong> Hold at least <strong>$1 worth of $MECHS for 3 days</strong> after distribution starts.</div></li>
         <li><span class="dot"></span><div><strong>No wallet connect.</strong> Paste address only. Tokens are sent to you.</div></li>
-        <li><span class="dot"></span><div><strong>Random amounts.</strong> Each eligible wallet gets a different share of the 20B airdrop.</div></li>
+        <li><span class="dot"></span><div><strong>Random amounts.</strong> Each eligible wallet gets a different share of the 20B $MECHS airdrop.</div></li>
         <li><span class="dot"></span><div><strong>3-day window.</strong> All eligible users receive rewards over three days.</div></li>
       </ul>
     </div>
-    <footer><a href="https://x.com/THEMECHS_" target="_blank" rel="noopener">@THEMECHS_</a> · WL airdrop</footer>
+    <footer><a href="https://x.com/THEMECHS_" target="_blank" rel="noopener">@THEMECHS_</a> · $MECHS airdrop</footer>
   </div>
   <script>
     var WL = null;
@@ -160,14 +160,14 @@
         document.getElementById('statusTitle').textContent = 'Eligible';
         document.getElementById('statusMsg').textContent = 'This wallet is on the whitelist.';
         allocBox.style.display = 'block';
-        document.getElementById('allocAmt').textContent = formatAmt(allocation(key)) + ' tokens';
-        document.getElementById('resultNote').textContent = 'Hold at least $1 of the token for 3 days to pass the anti-bot check. Distribution runs over 3 days — you will receive your tokens soon. No wallet connection required.';
+        document.getElementById('allocAmt').textContent = formatAmt(allocation(key)) + ' $MECHS';
+        document.getElementById('resultNote').textContent = 'Hold at least $1 of $MECHS for 3 days to pass the anti-bot check. Distribution runs over 3 days — you will receive your $MECHS soon. No wallet connection required.';
       } else {
         statusBox.className = 'status no';
         document.getElementById('statusTitle').textContent = 'Not eligible';
         document.getElementById('statusMsg').textContent = 'This wallet was not found on the whitelist.';
         allocBox.style.display = 'none';
-        document.getElementById('resultNote').textContent = 'Only wallets from the official whitelist form are eligible.';
+        document.getElementById('resultNote').textContent = 'Only wallets from the official whitelist form are eligible for $MECHS.';
       }
     }
     btn.addEventListener('click', runCheck);
